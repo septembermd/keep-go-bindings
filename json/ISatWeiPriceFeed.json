@@ -1,0 +1,390 @@
+{
+  "contractName": "ISatWeiPriceFeed",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getPrice",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "contract IMedianizer",
+          "name": "_ethBtcFeed",
+          "type": "address"
+        }
+      ],
+      "name": "addEthBtcFeed",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.17+commit.d19bba13\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"internalType\":\"contract IMedianizer\",\"name\":\"_ethBtcFeed\",\"type\":\"address\"}],\"name\":\"addEthBtcFeed\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"getPrice\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{\"getPrice()\":{\"details\":\"This does not account for any 'Flippening' event.\",\"return\":\"The price of one satoshi in wei.\"}}},\"userdoc\":{\"methods\":{\"addEthBtcFeed(address)\":{\"notice\":\"add a new ETH/BTC meidanizer to the internal ethBtcFeeds array\"},\"getPrice()\":{\"notice\":\"Get the current price of 1 satoshi in wei.\"}},\"notice\":\"satoshi/wei price feed interface.\"}},\"settings\":{\"compilationTarget\":{\"/Users/symf/IdeaProjects/tbtc/solidity/contracts/interfaces/ISatWeiPriceFeed.sol\":\"ISatWeiPriceFeed\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/symf/IdeaProjects/tbtc/solidity/contracts/external/IMedianizer.sol\":{\"keccak256\":\"0xbe5c1dbd0f097ed0ef72e2a61ab54de315685a835e7dc7f5d3404b5158189c67\",\"urls\":[\"bzz-raw://0519b1ce42540d07debfa8b62a52c6c44b309ea549cc4d3166d4fd821aec9b79\",\"dweb:/ipfs/QmYD2cojTyk2ZDrWrTKSthVUAPydzAgPrpRWeiwJyksPJV\"]},\"/Users/symf/IdeaProjects/tbtc/solidity/contracts/interfaces/ISatWeiPriceFeed.sol\":{\"keccak256\":\"0x41bdcc0cfbd415d58fdc01cc54adeb832933f31895d1f9a26c8eab16518d6d96\",\"urls\":[\"bzz-raw://b4c69fdffa322a4276032fe2ee0cbb950c81afff7dcd78eb18dddabc4fe2d015\",\"dweb:/ipfs/QmaJUvL5HNChwyrNN82Es5vhVZ9pHwgdsj9uEcUhBFR43R\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity 0.5.17;\n\nimport \"../external/IMedianizer.sol\";\n\n/// @notice satoshi/wei price feed interface.\ninterface ISatWeiPriceFeed {\n    /// @notice Get the current price of 1 satoshi in wei.\n    /// @dev This does not account for any 'Flippening' event.\n    /// @return The price of one satoshi in wei.\n    function getPrice() external view returns (uint256);\n\n    /// @notice add a new ETH/BTC meidanizer to the internal ethBtcFeeds array\n    function addEthBtcFeed(IMedianizer _ethBtcFeed) external;\n}\n",
+  "sourcePath": "/Users/symf/IdeaProjects/tbtc/solidity/contracts/interfaces/ISatWeiPriceFeed.sol",
+  "ast": {
+    "absolutePath": "/Users/symf/IdeaProjects/tbtc/solidity/contracts/interfaces/ISatWeiPriceFeed.sol",
+    "exportedSymbols": {
+      "ISatWeiPriceFeed": [
+        5445
+      ]
+    },
+    "id": 5446,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 5433,
+        "literals": [
+          "solidity",
+          "0.5",
+          ".17"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:10"
+      },
+      {
+        "absolutePath": "/Users/symf/IdeaProjects/tbtc/solidity/contracts/external/IMedianizer.sol",
+        "file": "../external/IMedianizer.sol",
+        "id": 5434,
+        "nodeType": "ImportDirective",
+        "scope": 5446,
+        "sourceUnit": 5432,
+        "src": "25:37:10",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": "@notice satoshi/wei price feed interface.",
+        "fullyImplemented": false,
+        "id": 5445,
+        "linearizedBaseContracts": [
+          5445
+        ],
+        "name": "ISatWeiPriceFeed",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": "@notice Get the current price of 1 satoshi in wei.\n @dev This does not account for any 'Flippening' event.\n @return The price of one satoshi in wei.",
+            "id": 5439,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getPrice",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 5435,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "331:2:10"
+            },
+            "returnParameters": {
+              "id": 5438,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5437,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5439,
+                  "src": "357:7:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 5436,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "357:7:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "356:9:10"
+            },
+            "scope": 5445,
+            "src": "314:52:10",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "@notice add a new ETH/BTC meidanizer to the internal ethBtcFeeds array",
+            "id": 5444,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "addEthBtcFeed",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 5442,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5441,
+                  "name": "_ethBtcFeed",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5444,
+                  "src": "474:23:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IMedianizer_$5431",
+                    "typeString": "contract IMedianizer"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 5440,
+                    "name": "IMedianizer",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 5431,
+                    "src": "474:11:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IMedianizer_$5431",
+                      "typeString": "contract IMedianizer"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "473:25:10"
+            },
+            "returnParameters": {
+              "id": 5443,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "507:0:10"
+            },
+            "scope": 5445,
+            "src": "451:57:10",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 5446,
+        "src": "110:400:10"
+      }
+    ],
+    "src": "0:511:10"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/symf/IdeaProjects/tbtc/solidity/contracts/interfaces/ISatWeiPriceFeed.sol",
+    "exportedSymbols": {
+      "ISatWeiPriceFeed": [
+        5445
+      ]
+    },
+    "id": 5446,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 5433,
+        "literals": [
+          "solidity",
+          "0.5",
+          ".17"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:10"
+      },
+      {
+        "absolutePath": "/Users/symf/IdeaProjects/tbtc/solidity/contracts/external/IMedianizer.sol",
+        "file": "../external/IMedianizer.sol",
+        "id": 5434,
+        "nodeType": "ImportDirective",
+        "scope": 5446,
+        "sourceUnit": 5432,
+        "src": "25:37:10",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": "@notice satoshi/wei price feed interface.",
+        "fullyImplemented": false,
+        "id": 5445,
+        "linearizedBaseContracts": [
+          5445
+        ],
+        "name": "ISatWeiPriceFeed",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": "@notice Get the current price of 1 satoshi in wei.\n @dev This does not account for any 'Flippening' event.\n @return The price of one satoshi in wei.",
+            "id": 5439,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getPrice",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 5435,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "331:2:10"
+            },
+            "returnParameters": {
+              "id": 5438,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5437,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5439,
+                  "src": "357:7:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 5436,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "357:7:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "356:9:10"
+            },
+            "scope": 5445,
+            "src": "314:52:10",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "@notice add a new ETH/BTC meidanizer to the internal ethBtcFeeds array",
+            "id": 5444,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "addEthBtcFeed",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 5442,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5441,
+                  "name": "_ethBtcFeed",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5444,
+                  "src": "474:23:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IMedianizer_$5431",
+                    "typeString": "contract IMedianizer"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 5440,
+                    "name": "IMedianizer",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 5431,
+                    "src": "474:11:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IMedianizer_$5431",
+                      "typeString": "contract IMedianizer"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "473:25:10"
+            },
+            "returnParameters": {
+              "id": 5443,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "507:0:10"
+            },
+            "scope": 5445,
+            "src": "451:57:10",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 5446,
+        "src": "110:400:10"
+      }
+    ],
+    "src": "0:511:10"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.17+commit.d19bba13.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.23",
+  "updatedAt": "2020-08-21T21:24:02.849Z",
+  "devdoc": {
+    "methods": {
+      "getPrice()": {
+        "details": "This does not account for any 'Flippening' event.",
+        "return": "The price of one satoshi in wei."
+      }
+    }
+  },
+  "userdoc": {
+    "methods": {
+      "addEthBtcFeed(address)": {
+        "notice": "add a new ETH/BTC meidanizer to the internal ethBtcFeeds array"
+      },
+      "getPrice()": {
+        "notice": "Get the current price of 1 satoshi in wei."
+      }
+    },
+    "notice": "satoshi/wei price feed interface."
+  }
+}

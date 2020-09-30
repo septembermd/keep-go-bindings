@@ -1,0 +1,1237 @@
+{
+  "contractName": "DepositFactoryAuthority",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_factory",
+          "type": "address"
+        }
+      ],
+      "name": "initialize",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.17+commit.d19bba13\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"_factory\",\"type\":\"address\"}],\"name\":\"initialize\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"details\":\"Secured by setting the depositFactory address and using the onlyFactory         modifier on functions requiring restriction.\",\"methods\":{},\"title\":\"Deposit Factory Authority\"},\"userdoc\":{\"methods\":{\"initialize(address)\":{\"notice\":\"Set the address of the System contract on contract initialization.\"}},\"notice\":\"Contract to secure function calls to the Deposit Factory.\"}},\"settings\":{\"compilationTarget\":{\"/Users/symf/IdeaProjects/tbtc/solidity/contracts/system/DepositFactoryAuthority.sol\":\"DepositFactoryAuthority\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/symf/IdeaProjects/tbtc/solidity/contracts/system/DepositFactoryAuthority.sol\":{\"keccak256\":\"0x061a601f87a25b1908c8aab57a4ee2bf54881b02f9124682c7f1fb4beac0e8bb\",\"urls\":[\"bzz-raw://2be415f3b568979706f7a6d3cb00ae989cd32a7a4dab4ca102edf575204a9dd1\",\"dweb:/ipfs/Qmdjc9KJPUkcK4LLnLdjmv2Wn2WUzdZWXTbtSo7rMMu9aL\"]}},\"version\":1}",
+  "bytecode": "0x60806040526000805460ff1916905534801561001a57600080fd5b5061011c8061002a6000396000f3fe6080604052348015600f57600080fd5b506004361060285760003560e01c8063c4d66de814602d575b600080fd5b605060048036036020811015604157600080fd5b50356001600160a01b03166052565b005b60005460ff161560935760405162461bcd60e51b81526004018080602001828103825260258152602001806100c36025913960400191505060405180910390fd5b6000805460ff196001600160a01b0390931661010002610100600160a81b03199091161791909116600117905556fe466163746f72792063616e206f6e6c7920626520696e697469616c697a6564206f6e63652ea265627a7a72315820f32b2d3b50e2e46580a4ee33893627a6f8860e4f2af67b50422bfc96f47f733564736f6c63430005110032",
+  "deployedBytecode": "0x6080604052348015600f57600080fd5b506004361060285760003560e01c8063c4d66de814602d575b600080fd5b605060048036036020811015604157600080fd5b50356001600160a01b03166052565b005b60005460ff161560935760405162461bcd60e51b81526004018080602001828103825260258152602001806100c36025913960400191505060405180910390fd5b6000805460ff196001600160a01b0390931661010002610100600160a81b03199091161791909116600117905556fe466163746f72792063616e206f6e6c7920626520696e697469616c697a6564206f6e63652ea265627a7a72315820f32b2d3b50e2e46580a4ee33893627a6f8860e4f2af67b50422bfc96f47f733564736f6c63430005110032",
+  "sourceMap": "274:711:18:-;;;343:5;314:34;;-1:-1:-1;;314:34:18;;;274:711;5:2:-1;;;;30:1;27;20:12;5:2;274:711:18;;;;;;;",
+  "deployedSourceMap": "274:711:18:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;274:711:18;;;;;;;;;;;;;;;;;;;476:192;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;476:192:18;-1:-1:-1;;;;;476:192:18;;:::i;:::-;;;541:12;;;;539:14;531:64;;;;-1:-1:-1;;;531:64:18;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;606:15;:26;;-1:-1:-1;;;;;;;606:26:18;;;;;-1:-1:-1;;;;;;606:26:18;;;;642:19;;;;606:15;642:19;;;476:192::o",
+  "source": "pragma solidity 0.5.17;\n\n/// @title  Deposit Factory Authority\n/// @notice Contract to secure function calls to the Deposit Factory.\n/// @dev    Secured by setting the depositFactory address and using the onlyFactory\n///         modifier on functions requiring restriction.\ncontract DepositFactoryAuthority {\n\n    bool internal _initialized = false;\n    address internal _depositFactory;\n\n    /// @notice Set the address of the System contract on contract initialization.\n    function initialize(address _factory) public {\n        require(! _initialized, \"Factory can only be initialized once.\");\n\n        _depositFactory = _factory;\n        _initialized = true;\n    }\n\n    /// @notice Function modifier ensures modified function is only called by set deposit factory.\n    modifier onlyFactory(){\n        require(_initialized, \"Factory initialization must have been called.\");\n        require(msg.sender == _depositFactory, \"Caller must be depositFactory contract\");\n        _;\n    }\n}\n",
+  "sourcePath": "/Users/symf/IdeaProjects/tbtc/solidity/contracts/system/DepositFactoryAuthority.sol",
+  "ast": {
+    "absolutePath": "/Users/symf/IdeaProjects/tbtc/solidity/contracts/system/DepositFactoryAuthority.sol",
+    "exportedSymbols": {
+      "DepositFactoryAuthority": [
+        6230
+      ]
+    },
+    "id": 6231,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 6187,
+        "literals": [
+          "solidity",
+          "0.5",
+          ".17"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:18"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": "@title  Deposit Factory Authority\n @notice Contract to secure function calls to the Deposit Factory.\n @dev    Secured by setting the depositFactory address and using the onlyFactory\n         modifier on functions requiring restriction.",
+        "fullyImplemented": true,
+        "id": 6230,
+        "linearizedBaseContracts": [
+          6230
+        ],
+        "name": "DepositFactoryAuthority",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 6190,
+            "name": "_initialized",
+            "nodeType": "VariableDeclaration",
+            "scope": 6230,
+            "src": "314:34:18",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bool",
+              "typeString": "bool"
+            },
+            "typeName": {
+              "id": 6188,
+              "name": "bool",
+              "nodeType": "ElementaryTypeName",
+              "src": "314:4:18",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bool",
+                "typeString": "bool"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "66616c7365",
+              "id": 6189,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "bool",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "343:5:18",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_bool",
+                "typeString": "bool"
+              },
+              "value": "false"
+            },
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 6192,
+            "name": "_depositFactory",
+            "nodeType": "VariableDeclaration",
+            "scope": 6230,
+            "src": "354:32:18",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 6191,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "354:7:18",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 6211,
+              "nodeType": "Block",
+              "src": "521:147:18",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 6199,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "UnaryOperation",
+                        "operator": "!",
+                        "prefix": true,
+                        "src": "539:14:18",
+                        "subExpression": {
+                          "argumentTypes": null,
+                          "id": 6198,
+                          "name": "_initialized",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 6190,
+                          "src": "541:12:18",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        },
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "466163746f72792063616e206f6e6c7920626520696e697469616c697a6564206f6e63652e",
+                        "id": 6200,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "555:39:18",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_ce00edb2a923848081003b8039d197b6044b329e1d83ed238dca317d015c0159",
+                          "typeString": "literal_string \"Factory can only be initialized once.\""
+                        },
+                        "value": "Factory can only be initialized once."
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_ce00edb2a923848081003b8039d197b6044b329e1d83ed238dca317d015c0159",
+                          "typeString": "literal_string \"Factory can only be initialized once.\""
+                        }
+                      ],
+                      "id": 6197,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        18156,
+                        18157
+                      ],
+                      "referencedDeclaration": 18157,
+                      "src": "531:7:18",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 6201,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "531:64:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 6202,
+                  "nodeType": "ExpressionStatement",
+                  "src": "531:64:18"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 6205,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 6203,
+                      "name": "_depositFactory",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 6192,
+                      "src": "606:15:18",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 6204,
+                      "name": "_factory",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 6194,
+                      "src": "624:8:18",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "606:26:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 6206,
+                  "nodeType": "ExpressionStatement",
+                  "src": "606:26:18"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 6209,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 6207,
+                      "name": "_initialized",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 6190,
+                      "src": "642:12:18",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "hexValue": "74727565",
+                      "id": 6208,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "bool",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "657:4:18",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      },
+                      "value": "true"
+                    },
+                    "src": "642:19:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 6210,
+                  "nodeType": "ExpressionStatement",
+                  "src": "642:19:18"
+                }
+              ]
+            },
+            "documentation": "@notice Set the address of the System contract on contract initialization.",
+            "id": 6212,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "initialize",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 6195,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6194,
+                  "name": "_factory",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6212,
+                  "src": "496:16:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6193,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "496:7:18",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "495:18:18"
+            },
+            "returnParameters": {
+              "id": 6196,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "521:0:18"
+            },
+            "scope": 6230,
+            "src": "476:192:18",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 6228,
+              "nodeType": "Block",
+              "src": "795:188:18",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 6215,
+                        "name": "_initialized",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 6190,
+                        "src": "813:12:18",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "466163746f727920696e697469616c697a6174696f6e206d7573742068617665206265656e2063616c6c65642e",
+                        "id": 6216,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "827:47:18",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_ec839c8c5c6b5e827d48fd88aa465bf1aeb67fc299bceed306c2fedd287c2af1",
+                          "typeString": "literal_string \"Factory initialization must have been called.\""
+                        },
+                        "value": "Factory initialization must have been called."
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_ec839c8c5c6b5e827d48fd88aa465bf1aeb67fc299bceed306c2fedd287c2af1",
+                          "typeString": "literal_string \"Factory initialization must have been called.\""
+                        }
+                      ],
+                      "id": 6214,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        18156,
+                        18157
+                      ],
+                      "referencedDeclaration": 18157,
+                      "src": "805:7:18",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 6217,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "805:70:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 6218,
+                  "nodeType": "ExpressionStatement",
+                  "src": "805:70:18"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        "id": 6223,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 6220,
+                            "name": "msg",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 18153,
+                            "src": "893:3:18",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_magic_message",
+                              "typeString": "msg"
+                            }
+                          },
+                          "id": 6221,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "sender",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": null,
+                          "src": "893:10:18",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address_payable",
+                            "typeString": "address payable"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "==",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "id": 6222,
+                          "name": "_depositFactory",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 6192,
+                          "src": "907:15:18",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "src": "893:29:18",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "43616c6c6572206d757374206265206465706f736974466163746f727920636f6e7472616374",
+                        "id": 6224,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "924:40:18",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_e0ecc7208047a6683867d6b9737c2935cc89cb774fe5f25ab7ade7c78861ee44",
+                          "typeString": "literal_string \"Caller must be depositFactory contract\""
+                        },
+                        "value": "Caller must be depositFactory contract"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_e0ecc7208047a6683867d6b9737c2935cc89cb774fe5f25ab7ade7c78861ee44",
+                          "typeString": "literal_string \"Caller must be depositFactory contract\""
+                        }
+                      ],
+                      "id": 6219,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        18156,
+                        18157
+                      ],
+                      "referencedDeclaration": 18157,
+                      "src": "885:7:18",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 6225,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "885:80:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 6226,
+                  "nodeType": "ExpressionStatement",
+                  "src": "885:80:18"
+                },
+                {
+                  "id": 6227,
+                  "nodeType": "PlaceholderStatement",
+                  "src": "975:1:18"
+                }
+              ]
+            },
+            "documentation": "@notice Function modifier ensures modified function is only called by set deposit factory.",
+            "id": 6229,
+            "name": "onlyFactory",
+            "nodeType": "ModifierDefinition",
+            "parameters": {
+              "id": 6213,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "793:2:18"
+            },
+            "src": "773:210:18",
+            "visibility": "internal"
+          }
+        ],
+        "scope": 6231,
+        "src": "274:711:18"
+      }
+    ],
+    "src": "0:986:18"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/symf/IdeaProjects/tbtc/solidity/contracts/system/DepositFactoryAuthority.sol",
+    "exportedSymbols": {
+      "DepositFactoryAuthority": [
+        6230
+      ]
+    },
+    "id": 6231,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 6187,
+        "literals": [
+          "solidity",
+          "0.5",
+          ".17"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:18"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": "@title  Deposit Factory Authority\n @notice Contract to secure function calls to the Deposit Factory.\n @dev    Secured by setting the depositFactory address and using the onlyFactory\n         modifier on functions requiring restriction.",
+        "fullyImplemented": true,
+        "id": 6230,
+        "linearizedBaseContracts": [
+          6230
+        ],
+        "name": "DepositFactoryAuthority",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 6190,
+            "name": "_initialized",
+            "nodeType": "VariableDeclaration",
+            "scope": 6230,
+            "src": "314:34:18",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bool",
+              "typeString": "bool"
+            },
+            "typeName": {
+              "id": 6188,
+              "name": "bool",
+              "nodeType": "ElementaryTypeName",
+              "src": "314:4:18",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bool",
+                "typeString": "bool"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "66616c7365",
+              "id": 6189,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "bool",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "343:5:18",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_bool",
+                "typeString": "bool"
+              },
+              "value": "false"
+            },
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 6192,
+            "name": "_depositFactory",
+            "nodeType": "VariableDeclaration",
+            "scope": 6230,
+            "src": "354:32:18",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 6191,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "354:7:18",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 6211,
+              "nodeType": "Block",
+              "src": "521:147:18",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 6199,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "UnaryOperation",
+                        "operator": "!",
+                        "prefix": true,
+                        "src": "539:14:18",
+                        "subExpression": {
+                          "argumentTypes": null,
+                          "id": 6198,
+                          "name": "_initialized",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 6190,
+                          "src": "541:12:18",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        },
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "466163746f72792063616e206f6e6c7920626520696e697469616c697a6564206f6e63652e",
+                        "id": 6200,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "555:39:18",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_ce00edb2a923848081003b8039d197b6044b329e1d83ed238dca317d015c0159",
+                          "typeString": "literal_string \"Factory can only be initialized once.\""
+                        },
+                        "value": "Factory can only be initialized once."
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_ce00edb2a923848081003b8039d197b6044b329e1d83ed238dca317d015c0159",
+                          "typeString": "literal_string \"Factory can only be initialized once.\""
+                        }
+                      ],
+                      "id": 6197,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        18156,
+                        18157
+                      ],
+                      "referencedDeclaration": 18157,
+                      "src": "531:7:18",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 6201,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "531:64:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 6202,
+                  "nodeType": "ExpressionStatement",
+                  "src": "531:64:18"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 6205,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 6203,
+                      "name": "_depositFactory",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 6192,
+                      "src": "606:15:18",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 6204,
+                      "name": "_factory",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 6194,
+                      "src": "624:8:18",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "606:26:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 6206,
+                  "nodeType": "ExpressionStatement",
+                  "src": "606:26:18"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 6209,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 6207,
+                      "name": "_initialized",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 6190,
+                      "src": "642:12:18",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "hexValue": "74727565",
+                      "id": 6208,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "bool",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "657:4:18",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      },
+                      "value": "true"
+                    },
+                    "src": "642:19:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 6210,
+                  "nodeType": "ExpressionStatement",
+                  "src": "642:19:18"
+                }
+              ]
+            },
+            "documentation": "@notice Set the address of the System contract on contract initialization.",
+            "id": 6212,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "initialize",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 6195,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6194,
+                  "name": "_factory",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6212,
+                  "src": "496:16:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6193,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "496:7:18",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "495:18:18"
+            },
+            "returnParameters": {
+              "id": 6196,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "521:0:18"
+            },
+            "scope": 6230,
+            "src": "476:192:18",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 6228,
+              "nodeType": "Block",
+              "src": "795:188:18",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 6215,
+                        "name": "_initialized",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 6190,
+                        "src": "813:12:18",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "466163746f727920696e697469616c697a6174696f6e206d7573742068617665206265656e2063616c6c65642e",
+                        "id": 6216,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "827:47:18",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_ec839c8c5c6b5e827d48fd88aa465bf1aeb67fc299bceed306c2fedd287c2af1",
+                          "typeString": "literal_string \"Factory initialization must have been called.\""
+                        },
+                        "value": "Factory initialization must have been called."
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_ec839c8c5c6b5e827d48fd88aa465bf1aeb67fc299bceed306c2fedd287c2af1",
+                          "typeString": "literal_string \"Factory initialization must have been called.\""
+                        }
+                      ],
+                      "id": 6214,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        18156,
+                        18157
+                      ],
+                      "referencedDeclaration": 18157,
+                      "src": "805:7:18",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 6217,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "805:70:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 6218,
+                  "nodeType": "ExpressionStatement",
+                  "src": "805:70:18"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        "id": 6223,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 6220,
+                            "name": "msg",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 18153,
+                            "src": "893:3:18",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_magic_message",
+                              "typeString": "msg"
+                            }
+                          },
+                          "id": 6221,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "sender",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": null,
+                          "src": "893:10:18",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address_payable",
+                            "typeString": "address payable"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "==",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "id": 6222,
+                          "name": "_depositFactory",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 6192,
+                          "src": "907:15:18",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "src": "893:29:18",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "43616c6c6572206d757374206265206465706f736974466163746f727920636f6e7472616374",
+                        "id": 6224,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "924:40:18",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_e0ecc7208047a6683867d6b9737c2935cc89cb774fe5f25ab7ade7c78861ee44",
+                          "typeString": "literal_string \"Caller must be depositFactory contract\""
+                        },
+                        "value": "Caller must be depositFactory contract"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_e0ecc7208047a6683867d6b9737c2935cc89cb774fe5f25ab7ade7c78861ee44",
+                          "typeString": "literal_string \"Caller must be depositFactory contract\""
+                        }
+                      ],
+                      "id": 6219,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        18156,
+                        18157
+                      ],
+                      "referencedDeclaration": 18157,
+                      "src": "885:7:18",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 6225,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "885:80:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 6226,
+                  "nodeType": "ExpressionStatement",
+                  "src": "885:80:18"
+                },
+                {
+                  "id": 6227,
+                  "nodeType": "PlaceholderStatement",
+                  "src": "975:1:18"
+                }
+              ]
+            },
+            "documentation": "@notice Function modifier ensures modified function is only called by set deposit factory.",
+            "id": 6229,
+            "name": "onlyFactory",
+            "nodeType": "ModifierDefinition",
+            "parameters": {
+              "id": 6213,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "793:2:18"
+            },
+            "src": "773:210:18",
+            "visibility": "internal"
+          }
+        ],
+        "scope": 6231,
+        "src": "274:711:18"
+      }
+    ],
+    "src": "0:986:18"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.17+commit.d19bba13.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.23",
+  "updatedAt": "2020-08-21T21:24:02.860Z",
+  "devdoc": {
+    "details": "Secured by setting the depositFactory address and using the onlyFactory         modifier on functions requiring restriction.",
+    "methods": {},
+    "title": "Deposit Factory Authority"
+  },
+  "userdoc": {
+    "methods": {
+      "initialize(address)": {
+        "notice": "Set the address of the System contract on contract initialization."
+      }
+    },
+    "notice": "Contract to secure function calls to the Deposit Factory."
+  }
+}

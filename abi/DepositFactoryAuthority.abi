@@ -1,0 +1,1 @@
+[{"constant":false,"inputs":[{"internalType":"address","name":"_factory","type":"address"}],"name":"initialize","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"}]

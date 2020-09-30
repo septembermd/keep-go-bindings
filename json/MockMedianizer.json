@@ -1,0 +1,1337 @@
+{
+  "contractName": "MockMedianizer",
+  "abi": [
+    {
+      "inputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferred",
+      "type": "event"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "isOwner",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "renounceOwnership",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "read",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "peek",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_value",
+          "type": "uint256"
+        }
+      ],
+      "name": "setValue",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.17+commit.d19bba13\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"constant\":true,\"inputs\":[],\"name\":\"isOwner\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"peek\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"read\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"renounceOwnership\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_value\",\"type\":\"uint256\"}],\"name\":\"setValue\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"details\":\"This is used in the Keep testnets only. Mainnet uses the MakerDAO medianizer.\",\"methods\":{\"isOwner()\":{\"details\":\"Returns true if the caller is the current owner.\"},\"owner()\":{\"details\":\"Returns the address of the current owner.\"},\"renounceOwnership()\":{\"details\":\"Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner.     * > Note: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner.\"},\"transferOwnership(address)\":{\"details\":\"Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner.\"}},\"title\":\"A mock implementation of a medianizer price oracle.\"},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/symf/IdeaProjects/tbtc/solidity/contracts/test/price-feed/MockMedianizer.sol\":\"MockMedianizer\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/symf/IdeaProjects/tbtc/solidity/contracts/external/IMedianizer.sol\":{\"keccak256\":\"0xbe5c1dbd0f097ed0ef72e2a61ab54de315685a835e7dc7f5d3404b5158189c67\",\"urls\":[\"bzz-raw://0519b1ce42540d07debfa8b62a52c6c44b309ea549cc4d3166d4fd821aec9b79\",\"dweb:/ipfs/QmYD2cojTyk2ZDrWrTKSthVUAPydzAgPrpRWeiwJyksPJV\"]},\"/Users/symf/IdeaProjects/tbtc/solidity/contracts/test/price-feed/MockMedianizer.sol\":{\"keccak256\":\"0xfc9dc05cfc2c8b7b22a1d2ace30a0e70c4256c7e29c85626b8f3e70a8b4c3716\",\"urls\":[\"bzz-raw://475978662af88bc7787b3f69913a4600d71e7454a65a417d061652aa7a22a056\",\"dweb:/ipfs/QmQs4ftGyY2u9FL5JU4vkFNYPNS8S1HpyCANayj2WuMjxD\"]},\"openzeppelin-solidity/contracts/ownership/Ownable.sol\":{\"keccak256\":\"0xf79fb10e8235770eb4aea7249034076a3cc9f9119ad944fc48705bae9c9d20dc\",\"urls\":[\"bzz-raw://cd3429aa9a4878dcf6c73faa32c3722f4013d4be012ece543b246faa6b50f55c\",\"dweb:/ipfs/QmS55hgTvNEAKinus19m65CB4wcymN8EiUPFpRx5tYJ1i2\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50600080546001600160a01b03191633178082556040516001600160a01b039190911691907f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0908290a36103db806100696000396000f3fe608060405234801561001057600080fd5b506004361061007d5760003560e01c8063715018a61161005b578063715018a6146100dc5780638da5cb5b146100e45780638f32d59b14610108578063f2fde38b146101245761007d565b8063552410771461008257806357de26a4146100a157806359e02dd7146100bb575b600080fd5b61009f6004803603602081101561009857600080fd5b503561014a565b005b6100a96101a8565b60408051918252519081900360200190f35b6100c36101ae565b6040805192835290151560208301528051918290030190f35b61009f6101b8565b6100ec61025b565b604080516001600160a01b039092168252519081900360200190f35b61011061026a565b604080519115158252519081900360200190f35b61009f6004803603602081101561013a57600080fd5b50356001600160a01b031661027b565b61015261026a565b6101a3576040805162461bcd60e51b815260206004820181905260248201527f4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e6572604482015290519081900360640190fd5b600155565b60015490565b6001548015159091565b6101c061026a565b610211576040805162461bcd60e51b815260206004820181905260248201527f4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e6572604482015290519081900360640190fd5b600080546040516001600160a01b03909116907f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0908390a3600080546001600160a01b0319169055565b6000546001600160a01b031690565b6000546001600160a01b0316331490565b61028361026a565b6102d4576040805162461bcd60e51b815260206004820181905260248201527f4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e6572604482015290519081900360640190fd5b6102dd816102e0565b50565b6001600160a01b0381166103255760405162461bcd60e51b81526004018080602001828103825260268152602001806103816026913960400191505060405180910390fd5b600080546040516001600160a01b03808516939216917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e091a3600080546001600160a01b0319166001600160a01b039290921691909117905556fe4f776e61626c653a206e6577206f776e657220697320746865207a65726f2061646472657373a265627a7a72315820b6a748d4fa6d01bc01cfc3708bb7e7db7099e91c167401e751b17b6caf97aa8964736f6c63430005110032",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061007d5760003560e01c8063715018a61161005b578063715018a6146100dc5780638da5cb5b146100e45780638f32d59b14610108578063f2fde38b146101245761007d565b8063552410771461008257806357de26a4146100a157806359e02dd7146100bb575b600080fd5b61009f6004803603602081101561009857600080fd5b503561014a565b005b6100a96101a8565b60408051918252519081900360200190f35b6100c36101ae565b6040805192835290151560208301528051918290030190f35b61009f6101b8565b6100ec61025b565b604080516001600160a01b039092168252519081900360200190f35b61011061026a565b604080519115158252519081900360200190f35b61009f6004803603602081101561013a57600080fd5b50356001600160a01b031661027b565b61015261026a565b6101a3576040805162461bcd60e51b815260206004820181905260248201527f4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e6572604482015290519081900360640190fd5b600155565b60015490565b6001548015159091565b6101c061026a565b610211576040805162461bcd60e51b815260206004820181905260248201527f4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e6572604482015290519081900360640190fd5b600080546040516001600160a01b03909116907f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0908390a3600080546001600160a01b0319169055565b6000546001600160a01b031690565b6000546001600160a01b0316331490565b61028361026a565b6102d4576040805162461bcd60e51b815260206004820181905260248201527f4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e6572604482015290519081900360640190fd5b6102dd816102e0565b50565b6001600160a01b0381166103255760405162461bcd60e51b81526004018080602001828103825260268152602001806103816026913960400191505060405180910390fd5b600080546040516001600160a01b03808516939216917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e091a3600080546001600160a01b0319166001600160a01b039290921691909117905556fe4f776e61626c653a206e6577206f776e657220697320746865207a65726f2061646472657373a265627a7a72315820b6a748d4fa6d01bc01cfc3708bb7e7db7099e91c167401e751b17b6caf97aa8964736f6c63430005110032",
+  "sourceMap": "294:438:36:-;;;376:80;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;657:6:60;:19;;-1:-1:-1;;;;;;657:19:60;666:10;657:19;;;;691:40;;-1:-1:-1;;;;;724:6:60;;;;;657;691:40;;657:6;;691:40;294:438:36;;;;;;",
+  "deployedSourceMap": "294:438:36:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;294:438:36;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;647:83;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;647:83:36;;:::i;:::-;;462:77;;;:::i;:::-;;;;;;;;;;;;;;;;545:96;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;1599:137:60;;;:::i;814:77::-;;;:::i;:::-;;;;-1:-1:-1;;;;;814:77:60;;;;;;;;;;;;;;1165:90;;;:::i;:::-;;;;;;;;;;;;;;;;;;1885:107;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;1885:107:60;-1:-1:-1;;;;;1885:107:60;;:::i;647:83:36:-;1018:9:60;:7;:9::i;:::-;1010:54;;;;;-1:-1:-1;;;1010:54:60;;;;;;;;;;;;;;;;;;;;;;;;;;;;;709:5:36;:14;647:83::o;462:77::-;527:5;;462:77;:::o;545:96::-;617:5;;624:9;;;545:96;;:::o;1599:137:60:-;1018:9;:7;:9::i;:::-;1010:54;;;;;-1:-1:-1;;;1010:54:60;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1697:1;1681:6;;1660:40;;-1:-1:-1;;;;;1681:6:60;;;;1660:40;;1697:1;;1660:40;1727:1;1710:19;;-1:-1:-1;;;;;;1710:19:60;;;1599:137::o;814:77::-;852:7;878:6;-1:-1:-1;;;;;878:6:60;814:77;:::o;1165:90::-;1205:4;1242:6;-1:-1:-1;;;;;1242:6:60;1228:10;:20;;1165:90::o;1885:107::-;1018:9;:7;:9::i;:::-;1010:54;;;;;-1:-1:-1;;;1010:54:60;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1957:28;1976:8;1957:18;:28::i;:::-;1885:107;:::o;2093:225::-;-1:-1:-1;;;;;2166:22:60;;2158:73;;;;-1:-1:-1;;;2158:73:60;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2267:6;;;2246:38;;-1:-1:-1;;;;;2246:38:60;;;;2267:6;;;2246:38;;;2294:6;:17;;-1:-1:-1;;;;;;2294:17:60;-1:-1:-1;;;;;2294:17:60;;;;;;;;;;2093:225::o",
+  "source": "pragma solidity 0.5.17;\n\nimport \"openzeppelin-solidity/contracts/ownership/Ownable.sol\";\nimport \"../../../contracts/external/IMedianizer.sol\";\n\n/// @title A mock implementation of a medianizer price oracle.\n/// @dev This is used in the Keep testnets only. Mainnet uses the MakerDAO medianizer.\ncontract MockMedianizer is Ownable, IMedianizer {\n    uint256 private value;\n\n    constructor() public {\n    // solium-disable-previous-line no-empty-blocks\n    }\n\n    function read() external view returns (uint256) {\n        return value;\n    }\n\n    function peek() external view returns (uint256, bool) {\n        return (value, value > 0);\n    }\n\n    function setValue(uint256 _value) external onlyOwner{\n        value = _value;\n    }\n}\n\ncontract ETHBTCPriceFeedMock is MockMedianizer {\n    // solium-disable-previous-line no-empty-blocks\n}\n",
+  "sourcePath": "/Users/symf/IdeaProjects/tbtc/solidity/contracts/test/price-feed/MockMedianizer.sol",
+  "ast": {
+    "absolutePath": "/Users/symf/IdeaProjects/tbtc/solidity/contracts/test/price-feed/MockMedianizer.sol",
+    "exportedSymbols": {
+      "ETHBTCPriceFeedMock": [
+        10499
+      ],
+      "MockMedianizer": [
+        10496
+      ]
+    },
+    "id": 10500,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 10449,
+        "literals": [
+          "solidity",
+          "0.5",
+          ".17"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:36"
+      },
+      {
+        "absolutePath": "openzeppelin-solidity/contracts/ownership/Ownable.sol",
+        "file": "openzeppelin-solidity/contracts/ownership/Ownable.sol",
+        "id": 10450,
+        "nodeType": "ImportDirective",
+        "scope": 10500,
+        "sourceUnit": 16760,
+        "src": "25:63:36",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/symf/IdeaProjects/tbtc/solidity/contracts/external/IMedianizer.sol",
+        "file": "../../../contracts/external/IMedianizer.sol",
+        "id": 10451,
+        "nodeType": "ImportDirective",
+        "scope": 10500,
+        "sourceUnit": 5432,
+        "src": "89:53:36",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 10452,
+              "name": "Ownable",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 16759,
+              "src": "321:7:36",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Ownable_$16759",
+                "typeString": "contract Ownable"
+              }
+            },
+            "id": 10453,
+            "nodeType": "InheritanceSpecifier",
+            "src": "321:7:36"
+          },
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 10454,
+              "name": "IMedianizer",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 5431,
+              "src": "330:11:36",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_IMedianizer_$5431",
+                "typeString": "contract IMedianizer"
+              }
+            },
+            "id": 10455,
+            "nodeType": "InheritanceSpecifier",
+            "src": "330:11:36"
+          }
+        ],
+        "contractDependencies": [
+          5431,
+          16759
+        ],
+        "contractKind": "contract",
+        "documentation": "@title A mock implementation of a medianizer price oracle.\n @dev This is used in the Keep testnets only. Mainnet uses the MakerDAO medianizer.",
+        "fullyImplemented": true,
+        "id": 10496,
+        "linearizedBaseContracts": [
+          10496,
+          5431,
+          16759
+        ],
+        "name": "MockMedianizer",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 10457,
+            "name": "value",
+            "nodeType": "VariableDeclaration",
+            "scope": 10496,
+            "src": "348:21:36",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 10456,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "348:7:36",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "private"
+          },
+          {
+            "body": {
+              "id": 10460,
+              "nodeType": "Block",
+              "src": "397:59:36",
+              "statements": []
+            },
+            "documentation": null,
+            "id": 10461,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10458,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "387:2:36"
+            },
+            "returnParameters": {
+              "id": 10459,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "397:0:36"
+            },
+            "scope": 10496,
+            "src": "376:80:36",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 10468,
+              "nodeType": "Block",
+              "src": "510:29:36",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 10466,
+                    "name": "value",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 10457,
+                    "src": "527:5:36",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 10465,
+                  "id": 10467,
+                  "nodeType": "Return",
+                  "src": "520:12:36"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 10469,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "read",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10462,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "475:2:36"
+            },
+            "returnParameters": {
+              "id": 10465,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10464,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10469,
+                  "src": "501:7:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 10463,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "501:7:36",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "500:9:36"
+            },
+            "scope": 10496,
+            "src": "462:77:36",
+            "stateMutability": "view",
+            "superFunction": 5423,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 10482,
+              "nodeType": "Block",
+              "src": "599:42:36",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "components": [
+                      {
+                        "argumentTypes": null,
+                        "id": 10476,
+                        "name": "value",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 10457,
+                        "src": "617:5:36",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        "id": 10479,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "id": 10477,
+                          "name": "value",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 10457,
+                          "src": "624:5:36",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": ">",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "hexValue": "30",
+                          "id": 10478,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "number",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "632:1:36",
+                          "subdenomination": null,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_rational_0_by_1",
+                            "typeString": "int_const 0"
+                          },
+                          "value": "0"
+                        },
+                        "src": "624:9:36",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      }
+                    ],
+                    "id": 10480,
+                    "isConstant": false,
+                    "isInlineArray": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "TupleExpression",
+                    "src": "616:18:36",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$_t_uint256_$_t_bool_$",
+                      "typeString": "tuple(uint256,bool)"
+                    }
+                  },
+                  "functionReturnParameters": 10475,
+                  "id": 10481,
+                  "nodeType": "Return",
+                  "src": "609:25:36"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 10483,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "peek",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10470,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "558:2:36"
+            },
+            "returnParameters": {
+              "id": 10475,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10472,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10483,
+                  "src": "584:7:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 10471,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "584:7:36",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10474,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10483,
+                  "src": "593:4:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 10473,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "593:4:36",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "583:15:36"
+            },
+            "scope": 10496,
+            "src": "545:96:36",
+            "stateMutability": "view",
+            "superFunction": 5430,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 10494,
+              "nodeType": "Block",
+              "src": "699:31:36",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 10492,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 10490,
+                      "name": "value",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 10457,
+                      "src": "709:5:36",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 10491,
+                      "name": "_value",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 10485,
+                      "src": "717:6:36",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "709:14:36",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 10493,
+                  "nodeType": "ExpressionStatement",
+                  "src": "709:14:36"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 10495,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 10488,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 10487,
+                  "name": "onlyOwner",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 16692,
+                  "src": "690:9:36",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "690:9:36"
+              }
+            ],
+            "name": "setValue",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10486,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10485,
+                  "name": "_value",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10495,
+                  "src": "665:14:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 10484,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "665:7:36",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "664:16:36"
+            },
+            "returnParameters": {
+              "id": 10489,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "699:0:36"
+            },
+            "scope": 10496,
+            "src": "647:83:36",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 10500,
+        "src": "294:438:36"
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 10497,
+              "name": "MockMedianizer",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 10496,
+              "src": "766:14:36",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_MockMedianizer_$10496",
+                "typeString": "contract MockMedianizer"
+              }
+            },
+            "id": 10498,
+            "nodeType": "InheritanceSpecifier",
+            "src": "766:14:36"
+          }
+        ],
+        "contractDependencies": [
+          5431,
+          10496,
+          16759
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 10499,
+        "linearizedBaseContracts": [
+          10499,
+          10496,
+          5431,
+          16759
+        ],
+        "name": "ETHBTCPriceFeedMock",
+        "nodeType": "ContractDefinition",
+        "nodes": [],
+        "scope": 10500,
+        "src": "734:102:36"
+      }
+    ],
+    "src": "0:837:36"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/symf/IdeaProjects/tbtc/solidity/contracts/test/price-feed/MockMedianizer.sol",
+    "exportedSymbols": {
+      "ETHBTCPriceFeedMock": [
+        10499
+      ],
+      "MockMedianizer": [
+        10496
+      ]
+    },
+    "id": 10500,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 10449,
+        "literals": [
+          "solidity",
+          "0.5",
+          ".17"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:36"
+      },
+      {
+        "absolutePath": "openzeppelin-solidity/contracts/ownership/Ownable.sol",
+        "file": "openzeppelin-solidity/contracts/ownership/Ownable.sol",
+        "id": 10450,
+        "nodeType": "ImportDirective",
+        "scope": 10500,
+        "sourceUnit": 16760,
+        "src": "25:63:36",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/symf/IdeaProjects/tbtc/solidity/contracts/external/IMedianizer.sol",
+        "file": "../../../contracts/external/IMedianizer.sol",
+        "id": 10451,
+        "nodeType": "ImportDirective",
+        "scope": 10500,
+        "sourceUnit": 5432,
+        "src": "89:53:36",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 10452,
+              "name": "Ownable",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 16759,
+              "src": "321:7:36",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Ownable_$16759",
+                "typeString": "contract Ownable"
+              }
+            },
+            "id": 10453,
+            "nodeType": "InheritanceSpecifier",
+            "src": "321:7:36"
+          },
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 10454,
+              "name": "IMedianizer",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 5431,
+              "src": "330:11:36",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_IMedianizer_$5431",
+                "typeString": "contract IMedianizer"
+              }
+            },
+            "id": 10455,
+            "nodeType": "InheritanceSpecifier",
+            "src": "330:11:36"
+          }
+        ],
+        "contractDependencies": [
+          5431,
+          16759
+        ],
+        "contractKind": "contract",
+        "documentation": "@title A mock implementation of a medianizer price oracle.\n @dev This is used in the Keep testnets only. Mainnet uses the MakerDAO medianizer.",
+        "fullyImplemented": true,
+        "id": 10496,
+        "linearizedBaseContracts": [
+          10496,
+          5431,
+          16759
+        ],
+        "name": "MockMedianizer",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 10457,
+            "name": "value",
+            "nodeType": "VariableDeclaration",
+            "scope": 10496,
+            "src": "348:21:36",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 10456,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "348:7:36",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "private"
+          },
+          {
+            "body": {
+              "id": 10460,
+              "nodeType": "Block",
+              "src": "397:59:36",
+              "statements": []
+            },
+            "documentation": null,
+            "id": 10461,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10458,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "387:2:36"
+            },
+            "returnParameters": {
+              "id": 10459,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "397:0:36"
+            },
+            "scope": 10496,
+            "src": "376:80:36",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 10468,
+              "nodeType": "Block",
+              "src": "510:29:36",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 10466,
+                    "name": "value",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 10457,
+                    "src": "527:5:36",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 10465,
+                  "id": 10467,
+                  "nodeType": "Return",
+                  "src": "520:12:36"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 10469,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "read",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10462,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "475:2:36"
+            },
+            "returnParameters": {
+              "id": 10465,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10464,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10469,
+                  "src": "501:7:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 10463,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "501:7:36",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "500:9:36"
+            },
+            "scope": 10496,
+            "src": "462:77:36",
+            "stateMutability": "view",
+            "superFunction": 5423,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 10482,
+              "nodeType": "Block",
+              "src": "599:42:36",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "components": [
+                      {
+                        "argumentTypes": null,
+                        "id": 10476,
+                        "name": "value",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 10457,
+                        "src": "617:5:36",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        "id": 10479,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "id": 10477,
+                          "name": "value",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 10457,
+                          "src": "624:5:36",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": ">",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "hexValue": "30",
+                          "id": 10478,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "number",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "632:1:36",
+                          "subdenomination": null,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_rational_0_by_1",
+                            "typeString": "int_const 0"
+                          },
+                          "value": "0"
+                        },
+                        "src": "624:9:36",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      }
+                    ],
+                    "id": 10480,
+                    "isConstant": false,
+                    "isInlineArray": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "TupleExpression",
+                    "src": "616:18:36",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$_t_uint256_$_t_bool_$",
+                      "typeString": "tuple(uint256,bool)"
+                    }
+                  },
+                  "functionReturnParameters": 10475,
+                  "id": 10481,
+                  "nodeType": "Return",
+                  "src": "609:25:36"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 10483,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "peek",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10470,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "558:2:36"
+            },
+            "returnParameters": {
+              "id": 10475,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10472,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10483,
+                  "src": "584:7:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 10471,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "584:7:36",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10474,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10483,
+                  "src": "593:4:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 10473,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "593:4:36",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "583:15:36"
+            },
+            "scope": 10496,
+            "src": "545:96:36",
+            "stateMutability": "view",
+            "superFunction": 5430,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 10494,
+              "nodeType": "Block",
+              "src": "699:31:36",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 10492,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 10490,
+                      "name": "value",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 10457,
+                      "src": "709:5:36",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 10491,
+                      "name": "_value",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 10485,
+                      "src": "717:6:36",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "709:14:36",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 10493,
+                  "nodeType": "ExpressionStatement",
+                  "src": "709:14:36"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 10495,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 10488,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 10487,
+                  "name": "onlyOwner",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 16692,
+                  "src": "690:9:36",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "690:9:36"
+              }
+            ],
+            "name": "setValue",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10486,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10485,
+                  "name": "_value",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10495,
+                  "src": "665:14:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 10484,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "665:7:36",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "664:16:36"
+            },
+            "returnParameters": {
+              "id": 10489,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "699:0:36"
+            },
+            "scope": 10496,
+            "src": "647:83:36",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 10500,
+        "src": "294:438:36"
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 10497,
+              "name": "MockMedianizer",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 10496,
+              "src": "766:14:36",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_MockMedianizer_$10496",
+                "typeString": "contract MockMedianizer"
+              }
+            },
+            "id": 10498,
+            "nodeType": "InheritanceSpecifier",
+            "src": "766:14:36"
+          }
+        ],
+        "contractDependencies": [
+          5431,
+          10496,
+          16759
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 10499,
+        "linearizedBaseContracts": [
+          10499,
+          10496,
+          5431,
+          16759
+        ],
+        "name": "ETHBTCPriceFeedMock",
+        "nodeType": "ContractDefinition",
+        "nodes": [],
+        "scope": 10500,
+        "src": "734:102:36"
+      }
+    ],
+    "src": "0:837:36"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.17+commit.d19bba13.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.23",
+  "updatedAt": "2020-08-21T21:24:02.918Z",
+  "devdoc": {
+    "details": "This is used in the Keep testnets only. Mainnet uses the MakerDAO medianizer.",
+    "methods": {
+      "isOwner()": {
+        "details": "Returns true if the caller is the current owner."
+      },
+      "owner()": {
+        "details": "Returns the address of the current owner."
+      },
+      "renounceOwnership()": {
+        "details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner.     * > Note: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner."
+      },
+      "transferOwnership(address)": {
+        "details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+      }
+    },
+    "title": "A mock implementation of a medianizer price oracle."
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}
